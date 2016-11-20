@@ -3,10 +3,6 @@
 <properties>
     <comment/>
 
-    <!--<entry key="BoneCP.jdbcUrl">jdbc:mysql://172.16.10.35:3306/hossv2_new_test?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull&amp;useLocalSessionState=true</entry>-->
-    <!--<entry key="BoneCP.username">fdb_dev</entry>-->
-    <!--<entry key="BoneCP.password">fdb_dev</entry>-->
-
     <entry key="BoneCP.jdbcUrl">jdbc:mysql://127.0.0.1:3306/case?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull&amp;useLocalSessionState=true</entry>
     <entry key="BoneCP.username">root</entry>
     <entry key="BoneCP.password">root</entry>
@@ -44,13 +40,5 @@
     <entry key="BoneCP.lazyInit">false</entry>
     <!--如果设置为true，则会保存该链接上的所有活动，以备下次重试的时候使用，这里指的活动是数据库操作-->
     <entry key="BoneCP.transactionRecoveryEnabled">false</entry>
-    <!--Connection hook class name-->
-    <!--<entry key="BoneCP.connectionHookClassName">false</entry>-->
-    <!--自定义连接池名称-->
-    <!--<entry key="BoneCP.poolName">hoss</entry>-->
-    <!--获取连接的时候最大的等待时间，默认值为：Long.MAX_VALUE-->
-    <!--<entry key="BoneCP.connectionTimeout">false</entry>-->
-    <!--控制JMX的支持开关-->
-    <!--<entry key="BoneCP.disableJMX">false</entry>-->
 
 </properties>
