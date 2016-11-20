@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd
+         http://maven.apache.org/POM/4.0.0 ">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.bc</groupId>
+    <artifactId>ba-case</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+        <!--  project base info  -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <jdk_version>1.7</jdk_version>
+        <java_version>1.7</java_version>
+        <javaee_version>7.0</javaee_version>
+
+        <!-- mysq驱动 连接池-->
+        <mysql_version>5.1.28</mysql_version>
+        <bonecp_version>0.8.0.RELEASE</bonecp_version>
+        <c3p0_version>0.9.1.2</c3p0_version>
+        <commonsDbcp_version>1.4</commonsDbcp_version>
+
+        <!--单元测试-->
+        <junit_version>4.10</junit_version>
+
+        <!--  spring -->
+        <spring.data_version>1.5.2.RELEASE</spring.data_version>
+        <spring_version>3.2.5.RELEASE</spring_version>
+
+        <!--  JPA Hibernate Implementation  -->
+        <hibernate_version>4.2.4.Final</hibernate_version>
+        <hibernatejpa_version>1.0.1.Final</hibernatejpa_version>
+        <springData_version>1.5.2.RELEASE</springData_version>
+
+        <!--  logger  -->
+        <slf4j_version>1.6.1</slf4j_version>
+        <log4j_version>1.2.16</log4j_version>
+
+        <!--  Java Mail  -->
+        <javamail_version>1.4.7</javamail_version>
+
+        <!--  common  -->
+        <commonsHttpClient_version>4.2.5</commonsHttpClient_version>
+        <commonsBeanUtils_version>1.8.0</commonsBeanUtils_version>
+        <commonsCli_version>1.2</commonsCli_version>
+        <commonsCollections_version>3.2.1</commonsCollections_version>
+        <commonsIo_version>2.2</commonsIo_version>
+        <commonsLang_version>3.3.2</commonsLang_version>
+        <commonsFileupload_version>1.3.1</commonsFileupload_version>
+        <commonsConfiguration_version>1.5</commonsConfiguration_version>
+        <commonsCodec_version>1.8</commonsCodec_version>
+        <commonsCompress_version>1.5</commonsCompress_version>
+        <commonsPool_version>20030825.183949</commonsPool_version>
+
+        <!--  jason  -->
+        <jackson_version>1.9.11</jackson_version>
+        <fasterxml.jackson_version>2.4.1</fasterxml.jackson_version>
+
+        <aspectj_version>1.8.9</aspectj_version>
+        <jxl_version>2.6.12</jxl_version>
+        <poi_version>3.9</poi_version>
+        <shiro_version>1.2.3</shiro_version>
+        <thumbnailator_version>0.4.8</thumbnailator_version>
+        <jsch_version>0.1.42</jsch_version>
+        <xfire_version>1.2.6</xfire_version>
+    </properties>
+
+
+    <dependencies>
+        <!-- ####################################   基础, 驱动, 测试, 日志支持  start #########################################-->
+        <!--javaee企业级开发api支持-->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>${javaee_version}</version>
+        </dependency>
+
+        <!-- Junit 与 springJunit测试支持-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring_version}</version>
+        </dependency>
+
+
+        <!-- 数据库驱动, 连接池 c3p0 或 boneCp -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql_version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jolbox</groupId>
+            <artifactId>bonecp</artifactId>
+            <version>${bonecp_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>${c3p0_version}</version>
+        </dependency>
+
+        <!-- 日志的支持 : slf4j >>> Log4j -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${slf4j_version}</version>
+        </dependency>
+        <!-- ####################################   基础, 驱动, 测试, 日志支持  start #########################################-->
+
+
+        <!-- ####################################   框架  start #########################################-->
+
+        <dependency> <!--spring 支持-->
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring_version}</version>
+        </dependency>
+
+        <dependency> <!-- 切面 -->
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectj_version}</version>
+        </dependency>
+
+
+        <dependency> <!--orm框架-->
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${springData_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate_version}</version>
+        </dependency>
+        <!-- ####################################   框架  start #########################################-->
+
+
+        <!-- ####################################   工具  start #########################################-->
+        <dependency><!--apacheCommons工具包-->
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>${commonsBeanUtils_version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commonsLang_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>${commonsFileupload_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commonsIo_version}</version>
+        </dependency>
+
+
+        <dependency> <!-- Excel工具 -->
+            <groupId>net.sourceforge.jexcelapi</groupId>
+            <artifactId>jxl</artifactId>
+            <version>${jxl_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${poi_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${poi_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml-schemas</artifactId>
+            <version>${poi_version}</version>
+        </dependency>
+
+
+        <dependency><!--Json工具-->
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.8</version>
+        </dependency>
+
+
+        <!--<dependency>  &lt;!&ndash; shiro 权限框架 &ndash;&gt;-->
+            <!--<groupId>org.apache.shiro</groupId>-->
+            <!--<artifactId>shiro-spring</artifactId>-->
+            <!--<version>${shiro_version}</version>-->
+        <!--</dependency>-->
+
+
+        <!--<dependency> &lt;!&ndash; 文件图片处理 &ndash;&gt;-->
+            <!--<groupId>net.coobird</groupId>-->
+            <!--<artifactId>thumbnailator</artifactId>-->
+            <!--<version>${thumbnailator_version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.jcraft</groupId>-->
+            <!--<artifactId>jsch</artifactId>-->
+            <!--<version>${jsch_version}</version>-->
+        <!--</dependency>-->
+
+
+        <!--<dependency> &lt;!&ndash; 中文拼音 &ndash;&gt;-->
+            <!--<groupId>com.belerweb</groupId>-->
+            <!--<artifactId>pinyin4j</artifactId>-->
+            <!--<version>${pinyin4j_version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.codehaus.xfire</groupId>-->
+            <!--<artifactId>xfire-core</artifactId>-->
+            <!--<version>${xfire_version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.belerweb</groupId>-->
+            <!--<artifactId>pinyin4j</artifactId>-->
+            <!--<version>2.5.1</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.belerweb</groupId>-->
+            <!--<artifactId>pinyin4j</artifactId>-->
+            <!--<version>2.5.1</version>-->
+        <!--</dependency>-->
+        <!-- ####################################   工具  end #########################################-->
+
+    </dependencies>
+
+    <build>
+        <finalName>bc-case</finalName>
+    </build>
+</project>
+
