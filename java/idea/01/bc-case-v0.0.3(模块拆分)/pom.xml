@@ -62,10 +62,14 @@
         <jackson_version>1.9.11</jackson_version>
         <fasterxml.jackson_version>2.4.1</fasterxml.jackson_version>
 
+        <!--lucene-->
+        <lucene_version>5.2.0</lucene_version>
+
+
         <aspectj_version>1.8.9</aspectj_version>
         <jxl_version>2.6.12</jxl_version>
         <poi_version>3.9</poi_version>
-        <shiro_version>1.2.3</shiro_version>
+        <shiro_version>1.2.0</shiro_version>
         <thumbnailator_version>0.4.8</thumbnailator_version>
         <jsch_version>0.1.42</jsch_version>
         <xfire_version>1.2.6</xfire_version>
@@ -252,44 +256,69 @@
         </dependency>
 
 
-        <!--<dependency>  &lt;!&ndash; shiro 权限框架 &ndash;&gt;-->
-            <!--<groupId>org.apache.shiro</groupId>-->
-            <!--<artifactId>shiro-spring</artifactId>-->
-            <!--<version>${shiro_version}</version>-->
+        <!--lucene全文检索-->
+
+        <!-- lucene start -->
+
+        <!--lucene-->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-core</artifactId>
+            <version>${lucene_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-queryparser</artifactId>
+            <version>${lucene_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analyzers-smartcn</artifactId>
+            <version>${lucene_version}</version>
+        </dependency>
+        <!-- lucene end -->
+
+
+
+        <!-- shiro 权限框架 -->
+        <!--<dependency>-->
+        <!--<groupId>org.apache.shiro</groupId>-->
+        <!--<artifactId>shiro-spring</artifactId>-->
+        <!--<version>${shiro_version}</version>-->
         <!--</dependency>-->
 
 
         <!--<dependency> &lt;!&ndash; 文件图片处理 &ndash;&gt;-->
-            <!--<groupId>net.coobird</groupId>-->
-            <!--<artifactId>thumbnailator</artifactId>-->
-            <!--<version>${thumbnailator_version}</version>-->
+        <!--<groupId>net.coobird</groupId>-->
+        <!--<artifactId>thumbnailator</artifactId>-->
+        <!--<version>${thumbnailator_version}</version>-->
         <!--</dependency>-->
         <!--<dependency>-->
-            <!--<groupId>com.jcraft</groupId>-->
-            <!--<artifactId>jsch</artifactId>-->
-            <!--<version>${jsch_version}</version>-->
+        <!--<groupId>com.jcraft</groupId>-->
+        <!--<artifactId>jsch</artifactId>-->
+        <!--<version>${jsch_version}</version>-->
         <!--</dependency>-->
 
 
         <!--<dependency> &lt;!&ndash; 中文拼音 &ndash;&gt;-->
-            <!--<groupId>com.belerweb</groupId>-->
-            <!--<artifactId>pinyin4j</artifactId>-->
-            <!--<version>${pinyin4j_version}</version>-->
+        <!--<groupId>com.belerweb</groupId>-->
+        <!--<artifactId>pinyin4j</artifactId>-->
+        <!--<version>${pinyin4j_version}</version>-->
         <!--</dependency>-->
         <!--<dependency>-->
-            <!--<groupId>org.codehaus.xfire</groupId>-->
-            <!--<artifactId>xfire-core</artifactId>-->
-            <!--<version>${xfire_version}</version>-->
+        <!--<groupId>org.codehaus.xfire</groupId>-->
+        <!--<artifactId>xfire-core</artifactId>-->
+        <!--<version>${xfire_version}</version>-->
         <!--</dependency>-->
         <!--<dependency>-->
-            <!--<groupId>com.belerweb</groupId>-->
-            <!--<artifactId>pinyin4j</artifactId>-->
-            <!--<version>2.5.1</version>-->
+        <!--<groupId>com.belerweb</groupId>-->
+        <!--<artifactId>pinyin4j</artifactId>-->
+        <!--<version>2.5.1</version>-->
         <!--</dependency>-->
         <!--<dependency>-->
-            <!--<groupId>com.belerweb</groupId>-->
-            <!--<artifactId>pinyin4j</artifactId>-->
-            <!--<version>2.5.1</version>-->
+        <!--<groupId>com.belerweb</groupId>-->
+        <!--<artifactId>pinyin4j</artifactId>-->
+        <!--<version>2.5.1</version>-->
         <!--</dependency>-->
         <!-- ####################################   工具  end #########################################-->
 
