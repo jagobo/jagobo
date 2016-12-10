@@ -1,4 +1,5 @@
 import com.bc.cas.manager.IndexManager;
+import com.bc.cas.manager.IndexUtil;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.lucene.queryparser.classic.ParseException;
@@ -28,36 +29,46 @@ public class LuceneTest {
     private static final Logger logger = LoggerFactory.getLogger(LuceneTest.class);
 
     @Autowired
+    private IndexUtil indexUtil;
+    @Autowired
     private IndexManager indexManager;
 
 
     @Test
-    public void indexTest() throws IOException {
+    public void testIndex() throws IOException {
         logger.info("================start");
-        indexManager.testCreateIndex();
+        //indexUtil.testCreateIndex();
         logger.info("================over");
 
     }
 
     @Test
-    public void queryTest() throws IOException, ParseException {
+    public void testQuery() throws IOException, ParseException {
         logger.info("================start");
-        indexManager.testQuery();
+        indexUtil.testQuery();
         logger.info("================over");
 
     }
 
     @Test
-    public void testTermQueryTest() throws IOException, ParseException {
+    public void testTermQuery() throws IOException, ParseException {
         logger.info("================start");
-        indexManager.testTermQuery();
+        indexUtil.testTermQuery();
         logger.info("================over");
     }
 
     @Test
-    public void testNumericQueryTest() throws IOException, ParseException {
+    public void testNumericQuery() throws IOException, ParseException {
         logger.info("================start");
-        indexManager.testNumericQuery();
+        indexUtil.testNumericQuery();
+        logger.info("================over");
+    }
+
+
+    @Test
+    public void testBooleanQuery() throws IOException, ParseException {
+        logger.info("================start");
+        indexUtil.testBooleanQuery();
         logger.info("================over");
     }
 
